@@ -20,7 +20,7 @@ class StreamTasksTest {
     void findShortWords() {
         var text = "Lets find some really   short words,  like this   like it a are not very short, not very long yes.";
         var shortWords = streamTasks.findShortWords(text, 3);
-        assertThat(shortWords).containsExactly("IT", "A", "ARE", "NOT");
+        assertThat(shortWords).containsExactly("IT", "A", "ARE", "NOT", "YES");
     }
 
     @Test

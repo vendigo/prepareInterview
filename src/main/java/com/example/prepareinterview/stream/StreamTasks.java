@@ -13,9 +13,9 @@ public class StreamTasks {
     public List<String> findShortWords(String text, int minLength) {
         return Stream.of(text.split("\\s"))
                 .filter(StringUtils::hasText)
+                .map(word -> word.replaceAll("\\W", ""))
                 .filter(word -> word.length() <= minLength)
                 .map(String::toUpperCase)
-                .map(word -> word.replaceAll("\\W", ""))
                 .distinct()
                 .toList();
     }
